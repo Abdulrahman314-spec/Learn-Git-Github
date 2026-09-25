@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Git & GitHub: The Complete Project Flow</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <div class="badge">ABDULRAHMAN NADER QUICK REFERENCE</div>
+  <div class="top">
+    <div>
+      <h1>Git &amp; GitHub: The Complete Project Flow</h1>
+      <p class="sub">From a new folder to an updated GitHub project · When unsure, run <span class="mono" style="color:var(--code)">git status</span></p>
+    </div>
+    <div class="header-side">
+    <div class="theme-toggle" id="themeToggle" title="Switch accent color">
+      <button class="swatch navy active" data-theme="navy" aria-label="Navy accent"></button>
+      <button class="swatch red" data-theme="red" aria-label="Red accent"></button>
+    </div>
+    <div class="setup-box">
+      <div class="setup-title-row">
+        <span class="setup-title">ONE-TIME SETUP</span>
+        <span class="setup-note">Do this once on each computer.</span>
+      </div>
+      <span class="mono">git config --global user.name "Your Name"</span>
+      <span class="mono">git config --global user.email "you@example.com"</span>
+      <span class="mono">git config --global --list</span>
+    </div>
+    </div>
+  </div>
+
+  <div class="flow-header">
+    <span class="pill">START A NEW LOCAL PROJECT</span>
+    <span class="progress-label" id="progressLabel">0 / 5 done · click a step to check it off</span>
+  </div>
+  <div class="flow-row" id="flowRow">
+    <div class="step-card" data-step="1">
+      <div class="step-head"><span class="step-num">1</span><span class="step-title">CREATE PROJECT</span><span class="step-check">✓</span></div>
+      <p class="step-desc">Create/open a folder<br>Add your project files</p>
+      <div class="step-code mono">personal-card/<br>index.html&nbsp;&nbsp;style.css&nbsp;&nbsp;README.md</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="step-card" data-step="2">
+      <div class="step-head"><span class="step-num">2</span><span class="step-title">INITIALIZE</span><span class="step-check">✓</span></div>
+      <p class="step-desc">Turn the folder into<br>a Git repository</p>
+      <div class="step-code mono">git init</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="step-card" data-step="3">
+      <div class="step-head"><span class="step-num">3</span><span class="step-title">CHECK</span><span class="step-check">✓</span></div>
+      <p class="step-desc">See the current state<br>before doing anything</p>
+      <div class="step-code mono">git status</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="step-card" data-step="4">
+      <div class="step-head"><span class="step-num">4</span><span class="step-title">STAGE</span><span class="step-check">✓</span></div>
+      <p class="step-desc">Choose changes for<br>the next saved version</p>
+      <div class="step-code mono">git add .</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="step-card" data-step="5">
+      <div class="step-head"><span class="step-num">5</span><span class="step-title">COMMIT</span><span class="step-check">✓</span></div>
+      <p class="step-desc">Save a named version<br>on your computer</p>
+      <div class="step-code mono">git commit -m "message"</div>
+    </div>
+  </div>
+
+  <div class="mid-row">
+    <div class="box loop">
+      <div class="loop-head-row">
+        <div>
+          <h2>THE DAILY GIT LOOP</h2>
+          <p class="desc">Repeat this whenever you change the project.</p>
+        </div>
+        <button class="play-btn" id="playLoop">▶ Play loop</button>
+      </div>
+      <div class="loop-row" id="loopRow">
+        <div class="loop-step" data-i="0"><b>EDIT</b><span class="mono">your files</span></div>
+        <div class="loop-arrow">→</div>
+        <div class="loop-step" data-i="1"><b>CHECK</b><span class="mono">git status</span></div>
+        <div class="loop-arrow">→</div>
+        <div class="loop-step" data-i="2"><b>STAGE</b><span class="mono">git add .</span></div>
+        <div class="loop-arrow">→</div>
+        <div class="loop-step" data-i="3"><b>COMMIT</b><span class="mono">git commit</span></div>
+        <div class="loop-arrow">→</div>
+        <div class="loop-step" data-i="4"><b>PUSH</b><span class="mono">git push</span></div>
+      </div>
+      <div class="repeat-row"><div class="line"></div>repeat<div class="line"></div></div>
+    </div>
+
+    <div class="box">
+      <h2>CONNECT TO GITHUB — FIRST UPLOAD</h2>
+      <p class="desc">First create an empty repository on GitHub, then run:</p>
+      <div class="connect-cmds">
+        <span class="mono">git remote add origin REPOSITORY_URL</span>
+        <span class="mono">git branch -M main</span>
+        <span class="mono">git push -u origin main</span>
+      </div>
+      <p class="connect-foot">origin = saved nickname &nbsp;•&nbsp; main = main branch &nbsp;•&nbsp; future uploads = git push</p>
+      <div class="local-github">
+        <div class="lg-box"><b>LOCAL</b><span>commits</span></div>
+        <div class="lg-arrow">→</div>
+        <div class="lg-box github"><b>GITHUB</b><span>online repo</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-grid">
+    <div class="box">
+      <h3>EXISTING PROJECT</h3>
+      <div class="kv"><span class="mono">git clone REPOSITORY_URL</span><div class="note">First download on this computer</div></div>
+      <div class="kv"><span class="mono">git pull</span><div class="note">Get new updates in an existing folder</div></div>
+    </div>
+
+    <div class="box">
+      <h3>INSPECT &amp; RECOVER</h3>
+      <div class="kv-inline"><span class="mono">git status</span><span class="note">current state</span></div>
+      <div class="kv-inline"><span class="mono">git log --oneline</span><span class="note">saved history</span></div>
+      <div class="kv-inline"><span class="mono">git diff</span><span class="note">unsaved changes</span></div>
+      <div class="kv-inline"><span class="mono">git restore filename</span><span class="note">discard unstaged edits</span></div>
+    </div>
+
+    <div class="box">
+      <h3>MAKE IT PRESENTABLE</h3>
+      <div class="readme-title mono">README.md</div>
+      <div class="readme-line"># Project name</div>
+      <div class="readme-line">Short description</div>
+      <div class="readme-line">## Features &nbsp;•&nbsp; ## How to Run</div>
+      <div class="flow-line mono">add → commit → push</div>
+    </div>
+
+    <div class="box">
+      <h3>BONUS: BRANCHES</h3>
+      <p class="desc" style="margin-bottom:10px;">A separate line of work.</p>
+      <div class="kv"><span class="mono">git branch</span></div>
+      <div class="kv"><span class="mono">git switch -c new-feature</span></div>
+      <div class="kv"><span class="mono">git switch main</span></div>
+      <div class="optional">Optional for beginners</div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="mental">MENTAL MODEL:<span>initialize once → edit → stage → commit → push → repeat</span></div>
+    <div class="credit">Abdulrahman Nader Gouda • Git &amp; GitHub Crash Course</div>
+  </footer>
+
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
