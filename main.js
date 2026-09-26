@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-  // 1) Click any command line to copy it
+  // 1) copy
   document.querySelectorAll('.mono').forEach(function (el) {
     if (!el.textContent.trim()) return;
     el.style.cursor = 'pointer';
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   updateLabel();
 
-  // 3) Animate the daily git loop step by step
+  // 3) تأثيرات loop
   var playBtn = document.getElementById('playLoop');
   var loopSteps = document.querySelectorAll('#loopRow .loop-step');
   if (playBtn) {
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // 4) Accent color toggle: navy / red
+  // 4) تحويل الالوان صفحة 
   var toggle = document.getElementById('themeToggle');
   if (toggle) {
     var THEME_KEY = 'git-flow-theme';
